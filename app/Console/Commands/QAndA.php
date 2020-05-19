@@ -11,7 +11,7 @@ class QAndA extends Command
      *
      * @var string
      */
-    protected $signature = 'qanda:interactive';
+    protected $signature = 'qanda:interactive {--prev=}';
 
     /**
      * The console command description.
@@ -37,8 +37,12 @@ class QAndA extends Command
      */
     public function handle()
     {
-        $this->info('Hello world!');
-
         // Create your interactive Q And A system here. Be sure to make use of all of Laravels functionalities.
+        $this->nextStep();
+    }
+
+    private function nextStep()
+    {
+        $this->call('qanda:options', ['--prev' => 'interactive']);
     }
 }
