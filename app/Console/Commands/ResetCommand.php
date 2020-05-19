@@ -38,7 +38,7 @@ class ResetCommand extends Command
     public function handle()
     {
         if ($this->confirm('Are you sure you want to reset all progress?')) {
-            $this->call('migrate:refresh');
+            $this->callSilent('migrate:refresh');
         }
     }
 }
